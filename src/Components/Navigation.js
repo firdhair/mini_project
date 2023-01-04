@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useTransition, animated } from "react-spring";
+import { Link } from "react-router-dom";
+import NavigationMenu from "./NavigationMenu";
 
 function Navigation(){
     const [showMenu, setShowMenu] = useState(false)
@@ -38,14 +40,6 @@ function Navigation(){
             <span className="text-xl">
                 <FontAwesomeIcon icon={faBars} onClick={() => setShowMenu(!showMenu)}/>
             </span>
-            {/* { showMenu ? menu : null } */}
-            {/* {menuMask}
-            {menu} */}
-            {/* {
-                transitions.map(({ item, key, props }) => 
-                    item && <animated.div key={key} style={props}>v</animated.div>
-                )
-            } */}
             {/* {
             transitions((style, item) => (
                 item && <animated.div style={style} className="bg-black-t-50 fixed top-0 left-0 w-full h-full z-50"  onClick={() => setShowMenu(false)}></animated.div>
@@ -68,19 +62,10 @@ function Navigation(){
                 item && 
                 key && 
                 <animated.div key={key} style={style} className="fixed bg-white top-0 left-0 w-4/5 h-full z-50 shadow p-3">
-                    <span className="font-bold">The menu</span>
-                    <ul>
-                        <li>Home</li>
-
-                    </ul>
+                <NavigationMenu closeMenu={() => setShowMenu(false)}/>
                 </animated.div>
             ))
             } 
-             {/* {
-            transitions((item, key, props) => (
-                item && key && <animated.div key={key} style={props}>v</animated.div>
-            ))
-            }  */}
         </nav>
     )
 }
