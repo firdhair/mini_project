@@ -5,11 +5,12 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Home from './View/Home';
 import About from './View/About';
+import Product from './View/Product';
 import React from 'react';
 
 function App() {
   return (
-    <div className="App">
+    <div className="relative pb-10 min-h-screen">
       <Router>
         {/* <ul>
           <li>
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
+            <Route path="/products/:id" element={<Product/>}/>
           </Routes>
         </div>
       </Router>
